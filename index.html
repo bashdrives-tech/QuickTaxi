@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCab | Live Map Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #map { height: 300px; width: 100%; border-radius: 12px; margin-top: 15px; }
+        .pac-container { border-radius: 8px; margin-top: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <section class="max-w-4xl mx-auto py-10 px-4">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200">
+            <div class="bg-yellow-400 p-6 text-center">
+                <h1 class="text-2xl font-bold italic">🚖 NEW BOOKING REQUEST</h1>
+            </div>
+
+            <div class="p-8 grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase">Pickup Location</label>
+                        <input id="pickup" type="text" placeholder="Search Pickup Point" class="w-full mt-1 p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-yellow-400 outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase">Drop Location</label>
+                        <input id="drop" type="text" placeholder="Search Destination" class="w-full mt-1 p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-yellow-400 outline-none">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Vehicle</label>
+                            <select class="w-full mt-1 p-3 bg-gray-50 border rounded-lg">
+                                <option>Mini (₹680)</option>
+                                <option>Sedan (₹850)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase">Distance</label>
+                            <div id="distance-display" class="w-full mt-1 p-3 bg-gray-100 border rounded-lg font-bold">0.0 km</div>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-black text-yellow-400 py-4 rounded-xl font-bold hover:scale-95 transition-transform">
+                        BOOK NOW
+                    </button>
+                </div>
+
+                <div>
+                    <div id="map"></div>
+                    <p class="text-[10px] text-gray-400 mt-2 text-center">Live location tracking enabled via Google Maps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let map, pickupAutocomplete, dropAutocomplete, directionsService, directionsRenderer;
+
+        function initMap() {
+            // Default center (Coimbatore)
+            const coimbatore = { lat: 11.0168, lng: 76.9558 };
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: coimbatore,
+                mapTypeControl: false,
+            });
+
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
+
+            // Autocomplete Setup
+            pickupAutocomplete = new google.maps.places.Autocomplete(document.getElementById('pickup'));
+            dropAutocomplete = new google.maps.places.Autocomplete(document.getElementById('drop'));
+
+            // Listen for changes
+            pickupAutocomplete.addListener('place_changed', calculateRoute);
+            dropAutocomplete.addListener('place_changed', calculateRoute);
+        }
+
+        function calculateRoute() {
+            const origin = document.getElementById('pickup').value;
+            const destination = document.getElementById('drop').value;
+
+            if (origin && destination) {
+                directionsService.route({
+                    origin: origin,
+                    destination: destination,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                }, (response, status) => {
+                    if (status === 'OK') {
+                        directionsRenderer.setDirections(response);
+                        const distance = response.routes[0].legs[0].distance.text;
+                        document.getElementById('distance-display').innerText = distance;
+                    }
+                });
+            }
+        }
+    </script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script>
+
+</body>
+</html>
