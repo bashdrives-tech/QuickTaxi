@@ -18,15 +18,14 @@
         header.wp-block-template-part, footer.wp-block-template-part, .wp-block-site-title, h1.wp-block-post-title, .entry-title, .wp-site-blocks > header, .wp-site-blocks > footer { display: none !important; }
         .wp-site-blocks, body, .entry-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
         
-        /* 1000% EXACT COLOR PALETTE FROM IMAGE */
         :root { 
-            --bg-dark: #050914;           /* Deep Night Background */
-            --bg-card: #ffffff;           /* White Booking Card */
-            --primary-blue: #FFC801;      /* Amber Gold */
-            --primary-orange: #FFC801;    /* Amber Gold Accent */
-            --primary-green: #25D366;     /* WhatsApp Green */
-            --text-dark: #050914;         /* Dark text for white sections */
-            --text-grey: #9BA1A6;         /* Grey from image text */
+            --bg-dark: #050914;
+            --bg-card: #ffffff;
+            --primary-blue: #FFC801;
+            --primary-orange: #FFC801;
+            --primary-green: #25D366;
+            --text-dark: #050914;
+            --text-grey: #9BA1A6;
         }
         
         * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
@@ -37,7 +36,6 @@
         .text-orange { color: var(--primary-orange); }
         .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 1rem; margin-bottom: 12px; border: none; gap: 8px; cursor: pointer; text-decoration: none; transition: 0.3s; }
         
-        /* Call button set to dark color from screenshot bottom bar */
         .btn-blue { background: #0B0E17; color: #ffffff; border: 1px solid #1a1e26; }
         .btn-orange { background: var(--primary-orange); color: #000; }
         
@@ -47,10 +45,7 @@
         .stats-row { display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid #1a1e26; padding-top: 15px; }
         .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         
-        /* Inner cards adjusted to dark theme */
         .feature-card { background: #11151f; padding: 15px; border-radius: 12px; border: 1px solid #1a1e26; text-align: left; }
-        
-        /* Main booking card remains white as per image */
         .fare-box { background: var(--bg-card); border: 2px solid var(--primary-blue); border-radius: 16px; padding: 25px; margin-top: 20px; color: var(--text-dark); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
         
         .tabs-nav { display: flex; background: #f1f5f9; padding: 4px; border-radius: 10px; margin-bottom: 20px; gap: 2px; }
@@ -129,9 +124,6 @@
         <select id="carSelect">
             <option value="15">Sedan (Petrol/CNG)</option>
             <option value="16">Sedan (Diesel)</option>
-            <option value="20">SUV (Ertiga/Rumion)</option>
-            <option value="25">Innova Crysta</option>
-            <option value="40">Urbania (13 Seater)</option>
         </select>
         <button class="btn btn-orange" onclick="calculateFare()">Get Quote Now</button>
         <div id="fareResult" style="margin-top:20px; display:none; font-size: 1.1rem; font-weight: bold; color: var(--primary-green); background: rgba(34, 197, 94, 0.1); padding: 15px; border-radius: 8px; border: 1px dashed var(--primary-green);"></div>
@@ -201,11 +193,14 @@ function calculateFare() {
     let estimatedPrice = 0;
     let displayDist = oneWayDist;
     let ratePerKm = parseFloat(document.getElementById('carSelect').value);
-    
+    let extraNote = "";
+
     if (currentMode === 'city') {
         estimatedPrice = 75 + (oneWayDist * 25);
+        if (oneWayDist > 30) extraNote = '<br><small style="font-weight:normal; color:#e11d48;">* Out of city charges will apply</small>';
     } else if (currentMode === 'airport') {
         estimatedPrice = 120 + (oneWayDist * 25);
+        if (oneWayDist > 30) extraNote = '<br><small style="font-weight:normal; color:#e11d48;">* Out of city charges will apply</small>';
     } else if (currentMode === 'oneway') {
         const tripType = document.querySelector('input[name="tripType"]:checked').value;
         if (tripType === 'oneway') {
@@ -215,10 +210,11 @@ function calculateFare() {
             displayDist = oneWayDist * 2;
             estimatedPrice = (displayDist * 14) + 500;
         }
+        extraNote = '<br><small style="font-weight:normal;">Tolls, Permits & Parking Extra</small>';
     }
 
     const resDiv = document.getElementById("fareResult");
-    resDiv.innerHTML = `Total Trip Distance: ${displayDist} KM<br>Estimated Fare: ₹${Math.round(estimatedPrice)}<br><small style="font-weight:normal;">Tolls, Permits & Parking Extra</small>`;
+    resDiv.innerHTML = `Total Trip Distance: ${displayDist} KM<br>Estimated Fare: ₹${Math.round(estimatedPrice)}${extraNote}`;
     resDiv.style.display = "block";
     document.getElementById('confirmBookingBtn').style.display = 'flex';
 }
