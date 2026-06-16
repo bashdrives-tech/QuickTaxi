@@ -1,110 +1,124 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18048951173"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17918498714"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-18048951173');
+      gtag('config', 'AW-17918498714');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicktaxi | Best Taxi Service Coimbatore</title>
+    <title>Quicktaxi Coimbatore | Guaranteed Pickups</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Playfair+Display:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         header.wp-block-template-part, footer.wp-block-template-part, .wp-block-site-title, h1.wp-block-post-title, .entry-title, .wp-site-blocks > header, .wp-site-blocks > footer { display: none !important; }
         .wp-site-blocks, body, .entry-content { padding: 0 !important; margin: 0 !important; max-width: 100% !important; }
         
+        /* Bright Theme Variables */
         :root { 
-            /* Quicktaxi Colors applied to New Template */
-            --bg-dark: #050914; 
-            --bg-card: #11151f; 
+            --bg-main: #ffffff; 
+            --bg-card: #f8fafc; 
             --primary-yellow: #FFC801; 
             --primary-green: #25D366; 
-            --text-white: #ffffff; 
-            --text-grey: #9BA1A6; 
-            --border-color: #1a1e26;
+            --text-main: #0f172a; 
+            --text-muted: #475569; 
+            --border-color: #e2e8f0;
         }
         
         * { box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; padding-bottom: 140px; overflow-x: hidden; }
+        body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; padding-bottom: 140px; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; position: relative; }
         .text-center { text-align: center; }
-        .text-gold { color: var(--primary-yellow); }
+        .text-gold { color: #d97706; } /* Darker yellow/gold for text contrast on white */
         
         /* Three Dot Navigation UI */
         .header-nav { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; margin-bottom: 5px; }
-        .three-dot-btn { background: none; border: none; color: var(--primary-yellow); font-size: 1.5rem; cursor: pointer; padding: 5px 10px; z-index: 1001; transition: transform 0.2s; }
+        .three-dot-btn { background: none; border: none; color: var(--text-main); font-size: 1.5rem; cursor: pointer; padding: 5px 10px; z-index: 1001; transition: transform 0.2s; }
+        .three-dot-btn:hover, .three-dot-btn:active { transform: scale(1.1); }
         
         /* Sliding Sidebar Drawer Layout */
-        .nav-drawer { position: fixed; top: 0; right: -250px; width: 250px; height: 100%; background: #050914; z-index: 1000; box-shadow: -5px 0 25px rgba(0,0,0,0.8); transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 70px 20px 20px 20px; display: flex; flex-direction: column; gap: 15px; border-left: 1px solid var(--border-color); }
+        .nav-drawer { position: fixed; top: 0; right: -250px; width: 250px; height: 100%; background: #ffffff; z-index: 1000; box-shadow: -5px 0 25px rgba(0,0,0,0.1); transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 70px 20px 20px 20px; display: flex; flex-direction: column; gap: 15px; border-left: 1px solid var(--border-color); }
         .nav-drawer.open { right: 0; }
-        .nav-link { color: #fff; text-decoration: none; font-size: 1rem; font-weight: 600; padding: 12px 15px; border-radius: 8px; background: rgba(255,255,255,0.03); display: flex; align-items: center; gap: 10px; }
-        .nav-link i { color: var(--primary-yellow); width: 20px; }
-        .drawer-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 999; }
+        .nav-link { color: var(--text-main); text-decoration: none; font-size: 1rem; font-weight: 600; padding: 12px 15px; border-radius: 8px; background: var(--bg-card); display: flex; align-items: center; gap: 10px; transition: background 0.2s; border: 1px solid var(--border-color); }
+        .nav-link:hover { background: #fef08a; }
+        .nav-link i { color: #d97706; width: 20px; }
+        .drawer-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 999; }
         .drawer-overlay.show { display: block; }
 
-        /* Buttons */
-        .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1.1rem; margin-bottom: 12px; border: none; gap: 10px; cursor: pointer; text-decoration: none; transition: transform 0.2s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        /* Direct Action Call CTA Buttons */
+        .btn { display: flex; justify-content: center; align-items: center; width: 100%; padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1.1rem; margin-bottom: 12px; border: none; gap: 10px; cursor: pointer; text-decoration: none; transition: transform 0.2s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-gold { background: var(--primary-yellow); color: #000; text-transform: uppercase; letter-spacing: 0.5px; }
-        .btn-whatsapp-subtle { background: var(--primary-green); color: #fff; font-size: 0.95rem; font-weight: 700; border: none; }
+        .btn-whatsapp-subtle { background: #f0fdf4; color: #166534; border: 2px solid #bbf7d0; font-size: 0.95rem; font-weight: 700; }
         
-        .hero { padding: 10px 0 30px; background: radial-gradient(circle at center, rgba(17, 21, 31, 0.9), var(--bg-dark)); margin-top: -10px; }
-        .brand-title { font-family: 'Fraunces', serif; font-size: 2.8rem; color: var(--primary-yellow); margin-bottom: 2px; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .tagline-pill { background: rgba(255, 200, 1, 0.1); color: var(--primary-yellow); display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; border: 1px solid rgba(255, 200, 1, 0.3); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-        .live-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #e5e7eb; margin-bottom: 15px; background: rgba(37, 211, 102, 0.15); padding: 5px 14px; border-radius: 12px; border: 1px solid rgba(37, 211, 102, 0.3); }
-        .live-dot { width: 8px; height: 8px; background-color: var(--primary-green); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--primary-green); animation: status-blink 1.5s infinite ease-in-out; }
+        .hero { padding: 10px 0 30px; background: var(--bg-card); margin-top: -10px; border-bottom: 1px solid var(--border-color); }
+        .brand-title { font-family: 'Fraunces', serif; font-size: 2.8rem; color: var(--text-main); margin-bottom: 2px; font-weight: 800; }
+        .tagline-pill { background: #fef08a; color: #854d0e; display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #fde047; font-weight: 800; letter-spacing: 0.5px; }
+        .live-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #166534; margin-bottom: 15px; background: #dcfce7; padding: 5px 14px; border-radius: 12px; border: 1px solid #bbf7d0; }
+        .live-dot { width: 8px; height: 8px; background-color: var(--primary-green); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px rgba(37, 211, 102, 0.6); animation: status-blink 1.5s infinite ease-in-out; }
         
         .hero-features-list { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 12px 0 22px 0; }
-        .hero-icon-tag { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); padding: 6px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; color: #f3f4f6; display: flex; align-items: center; gap: 5px; }
-        .hero-icon-tag i { color: var(--primary-yellow); }
+        .hero-icon-tag { background: #ffffff; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 8px; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); display: flex; align-items: center; gap: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .hero-icon-tag i { color: #d97706; }
         .stats-row { display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid var(--border-color); padding-top: 15px; }
         
-        .section-title { font-size: 1.4rem; color: #ffffff; margin: 35px 0 15px 0; font-weight: 800; border-left: 4px solid var(--primary-yellow); padding-left: 10px; text-transform: uppercase; text-align: left; }
+        .section-title { font-size: 1.4rem; color: var(--text-main); margin: 35px 0 15px 0; font-weight: 800; border-left: 4px solid var(--primary-yellow); padding-left: 10px; text-transform: uppercase; text-align: left; }
         .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .feature-card { background: var(--bg-card); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color); text-align: left; display: flex; align-items: center; gap: 10px; }
+        .feature-card { background: #ffffff; padding: 15px; border-radius: 12px; border: 1px solid var(--border-color); text-align: left; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         
         /* Calculator Framework Box */
-        .fare-box { background: #ffffff; border: none; border-radius: 16px; padding: 22px; margin-top: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.5); color: #1f2937; text-align: left; }
-        .tabs-nav { display: flex; background: #050914; padding: 4px; border-radius: 10px; margin-bottom: 15px; gap: 2px; }
-        .tab-btn { flex: 1; padding: 11px 2px; background: transparent; border: none; color: var(--text-grey); font-size: 0.75rem; cursor: pointer; font-weight: 700; white-space: nowrap; text-transform: uppercase; text-align: center; }
+        .fare-box { background: #ffffff; border: 2px solid var(--primary-yellow); border-radius: 16px; padding: 22px; margin-top: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); color: var(--text-main); text-align: left; }
+        .tabs-nav { display: flex; background: var(--bg-card); padding: 4px; border-radius: 10px; margin-bottom: 15px; gap: 2px; border: 1px solid var(--border-color); }
+        .tab-btn { flex: 1; padding: 11px 2px; background: transparent; border: none; color: var(--text-muted); font-size: 0.75rem; cursor: pointer; font-weight: 700; white-space: nowrap; text-transform: uppercase; text-align: center; }
         .tab-btn.active { background: var(--primary-yellow); color: #000; border-radius: 6px; }
         
-        .form-label { display: block; font-size: 11px; font-weight: 800; color: #4b5563; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-        input, select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; margin-bottom: 14px; font-size: 0.95rem; text-align: left; color: #111827; font-weight: 600; background: #f8fafc; }
+        .form-label { display: block; font-size: 11px; font-weight: 800; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        input, select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; margin-bottom: 14px; font-size: 0.95rem; text-align: left; color: var(--text-main); font-weight: 600; background: #ffffff; }
+        input:focus, select:focus { outline: none; border-color: var(--primary-yellow); box-shadow: 0 0 0 3px rgba(255, 200, 1, 0.2); }
         
-        #oneway-options { display: none; margin: -5px 0 14px; justify-content: flex-start; gap: 25px; font-weight: 700; background: #f3f4f6; padding: 10px; border-radius: 8px; font-size: 0.85rem; color: #374151; }
+        #oneway-options { display: none; margin: -5px 0 14px; justify-content: flex-start; gap: 25px; font-weight: 700; background: var(--bg-card); padding: 10px; border-radius: 8px; font-size: 0.85rem; color: var(--text-main); border: 1px solid var(--border-color); }
         #oneway-options label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
         #oneway-options input { width: auto; margin-bottom: 0; }
-        
-        /* Fleet & Tours */
-        .fleet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
-        .fleet-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
-        .fleet-img { width: 100%; height: 110px; object-fit: cover; background-color: #050914; }
-        .fleet-info { padding: 12px; text-align: center; background: #050914; border-top: 1px solid var(--border-color); }
-        .fleet-info h4 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; color: #ffffff; }
-        .fleet-info p { font-size: 0.75rem; color: var(--text-grey); margin: 0; }
-        
-        .tour-card { background: var(--bg-card); border-radius: 14px; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--border-color); }
-        .tour-img { height: 140px; background-size: cover; background-position: center; position: relative; background-color: #1a1e26; }
-        .tour-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding: 12px; font-size: 1.2rem; font-weight: bold; color: var(--primary-yellow); }
-        .tour-points { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 15px; background: #050914; border-bottom: 1px solid var(--border-color); }
-        .t-point { font-size: 0.78rem; color: #e5e7eb; display: flex; align-items: center; gap: 6px; }
-        .t-point i { color: var(--primary-yellow); font-size: 0.75rem; }
+        #tour-dropdown-container { display: none; }
 
-        .sticky-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #050914; display: flex; padding: 10px; gap: 8px; z-index: 9999; box-shadow: 0 -5px 25px rgba(0,0,0,0.6); border-top: 1px solid var(--border-color); }
-        .sticky-btn { flex: 1; padding: 14px; border-radius: 8px; font-weight: 800; font-size: 1rem; display: flex; justify-content: center; align-items: center; gap: 8px; text-decoration: none; border: none; color: #fff; }
+        .keyword-helper-text { font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; font-style: italic; font-weight: 500; text-align: center; }
+        
+        /* 6 Vehicle Grid Fleet Component Layouts */
+        .fleet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
+        .fleet-card { background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .fleet-img { width: 100%; height: 110px; object-fit: cover; background-color: var(--bg-card); }
+        .fleet-info { padding: 12px; text-align: center; background: #ffffff; border-top: 1px solid var(--border-color); }
+        .fleet-info h4 { font-size: 1rem; font-weight: 800; margin-bottom: 2px; color: var(--text-main); }
+        .fleet-info p { font-size: 0.75rem; color: var(--text-muted); margin: 0; font-weight: 600; }
+        
+        /* 4 Holiday Tour Package Content Elements */
+        .tour-card { background: #ffffff; border-radius: 14px; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--border-color); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .tour-img { height: 140px; background-size: cover; background-position: center; position: relative; background-color: var(--bg-card); }
+        .tour-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 12px; font-size: 1.2rem; font-weight: 800; color: #ffffff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+        .tour-points { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 15px; background: #ffffff; border-bottom: 1px solid var(--border-color); }
+        .t-point { font-size: 0.78rem; color: var(--text-main); display: flex; align-items: center; gap: 6px; font-weight: 600; }
+        .t-point i { color: #d97706; font-size: 0.75rem; }
+        
+        .popular-routes-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 15px; }
+        .route-call-pill { background: #ffffff; border: 1px solid var(--border-color); padding: 14px; border-radius: 8px; text-decoration: none; color: var(--text-main); font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .route-call-pill span { color: #d97706; font-size: 12px; font-weight: 800; }
+
+        .sticky-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; display: flex; padding: 10px; gap: 8px; z-index: 9999; box-shadow: 0 -5px 25px rgba(0,0,0,0.05); border-top: 1px solid var(--border-color); }
+        .sticky-btn { flex: 1; padding: 14px; border-radius: 8px; font-weight: 800; font-size: 1rem; display: flex; justify-content: center; align-items: center; gap: 8px; text-decoration: none; border: none; }
         .sticky-pulse { animation: cta-pulse 2s infinite; }
         
         @keyframes cta-pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 200, 1, 0.7); } 70% { box-shadow: 0 0 0 12px rgba(255, 200, 1, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 200, 1, 0); } }
         @keyframes status-blink { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
         
-        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); padding: 20px; overflow-y: auto; }
-        .modal-content { background: var(--bg-card); padding: 25px; border-radius: 15px; max-width: 450px; margin: 40px auto; border: 1px solid var(--primary-yellow); color: #fff; font-size: 0.9rem; text-align: left; }
-        .close-modal { color: var(--primary-yellow); float: right; font-size: 28px; font-weight: bold; cursor: pointer; margin-top: -10px; }
+        .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); padding: 20px; overflow-y: auto; }
+        .modal-content { background: #ffffff; padding: 25px; border-radius: 15px; max-width: 450px; margin: 40px auto; border: 2px solid var(--primary-yellow); color: var(--text-main); font-size: 0.95rem; text-align: left; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .modal-content h3 { color: var(--text-main); margin-top: 0; }
+        .close-modal { color: var(--text-muted); float: right; font-size: 28px; font-weight: bold; cursor: pointer; margin-top: -5px; }
+        .close-modal:hover { color: #000; }
     </style>
 </head>
 <body id="home">
@@ -112,6 +126,7 @@
 <div id="drawerOverlay" class="drawer-overlay" onclick="toggleMenu()"></div>
 <nav id="navDrawer" class="nav-drawer">
     <a href="#booking" class="nav-link" onclick="toggleMenu()"><i class="fas fa-taxi"></i> Book Instant Cab</a>
+    <a href="#routes-section" class="nav-link" onclick="toggleMenu()"><i class="fas fa-map-marked-alt"></i> Popular Destinations</a>
     <a href="#fleet" class="nav-link" onclick="toggleMenu()"><i class="fas fa-car"></i> Our Fleet</a>
     <a href="#features-list" class="nav-link" onclick="toggleMenu()"><i class="fas fa-star"></i> Why Choose Us</a>
     <a href="#" class="nav-link" onclick="toggleMenu(); openModal('about')"><i class="fas fa-info-circle"></i> About Our Service</a>
@@ -120,34 +135,34 @@
 <div class="hero"><div class="container">
     
     <div class="header-nav">
-        <div class="tagline-pill">COIMBATORE'S GUARANTEED OUTSTATION SERVICE</div>
+        <div class="tagline-pill">COIMBATORE'S GUARANTEED PICKUP SERVICE</div>
         <button class="three-dot-btn" onclick="toggleMenu()"><i class="fas fa-ellipsis-v"></i></button>
     </div>
     
     <div class="text-center">
         <h1 class="brand-title">Quicktaxi</h1>
-        <h2 style="font-size: 1.7rem; color: #fff; line-height: 1.3; font-weight: 700; margin-bottom: 5px;">
-            Intercity & One-Way Drops <span class="text-gold">Made Easy</span>
+        <h2 style="font-size: 1.7rem; color: var(--text-main); line-height: 1.3; font-weight: 800; margin-bottom: 5px;">
+            Your Trusted Ride in <span class="text-gold">Coimbatore</span>
         </h2>
-        <p style="font-size: 0.9rem; color: var(--text-grey); font-weight: 600; margin: 0 0 15px 0;">
+        <p style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600; margin: 0 0 15px 0;">
             Safe, Reliable, and On-Time. Every Single Time.
         </p>
 
-        <div class="live-status"><span class="live-dot"></span> Outstation Cabs Available Now</div>
+        <div class="live-status"><span class="live-dot"></span> Cabs Available Near You Now</div>
         
         <a href="tel:+916369879966" class="btn btn-gold sticky-pulse"><i class="fas fa-phone-alt"></i> TAP TO CALL: 6369879966</a>
         <a href="https://wa.me/916369879966" class="btn btn-whatsapp-subtle"><i class="fab fa-whatsapp"></i> Inquiry via WhatsApp</a>
         
         <div class="hero-features-list">
-            <div class="hero-icon-tag"><i class="fas fa-bolt"></i> Instant Booking</div>
+            <div class="hero-icon-tag"><i class="fas fa-bolt"></i> 10-Min Pickup</div>
             <div class="hero-icon-tag"><i class="fas fa-hand-holding-dollar"></i> Flat Tariffs</div>
-            <div class="hero-icon-tag"><i class="fas fa-user-shield"></i> Highway Verified Drivers</div>
+            <div class="hero-icon-tag"><i class="fas fa-user-shield"></i> Verified Drivers</div>
         </div>
 
         <div class="stats-row">
-            <div class="text-center"><span class="text-gold" style="font-size: 1.2rem; font-weight: 800;">24 HR</span><br><small style="color: var(--text-grey); font-weight: 600;">Booking</small></div>
-            <div class="text-center"><span class="text-gold" style="font-size: 1.2rem; font-weight: 800;">CLEAN</span><br><small style="color: var(--text-grey); font-weight: 600;">Vehicles</small></div>
-            <div class="text-center"><span class="text-gold" style="font-size: 1.2rem; font-weight: 800;">LOWEST</span><br><small style="color: var(--text-grey); font-weight: 600;">Fares</small></div>
+            <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">24 HR</span><br><small style="color: var(--text-muted); font-weight: 700;">Booking</small></div>
+            <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">FAST</span><br><small style="color: var(--text-muted); font-weight: 700;">Pickup</small></div>
+            <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">LOWEST</span><br><small style="color: var(--text-muted); font-weight: 700;">Fares</small></div>
         </div>
     </div>
 </div></div>
@@ -160,63 +175,91 @@
     </div>
     
     <div class="fare-box">
-        <h3>Live Fare Calculator</h3>
+        <h3 style="margin-top:0; color: var(--text-main);">Live Fare Calculator</h3>
         
         <span class="form-label">Pickup Location</span>
         <input type="text" id="fromCity" placeholder="Type pickup point...">
         
         <span class="form-label">Drop Destination</span>
         <input type="text" id="toCity" placeholder="Type drop destination...">
-
+        
         <span class="form-label">Approximate Distance (KM)</span>
-        <input type="number" id="manualKm" placeholder="Enter distance in kilometers...">
+        <input type="number" id="manualKm" placeholder="Enter approximate KM...">
         
         <div id="oneway-options">
             <label><input type="radio" name="tripType" value="oneway" checked> One Way</label>
             <label><input type="radio" name="tripType" value="round"> Round Trip</label>
         </div>
+        
+        <div id="tour-dropdown-container">
+            <span class="form-label">Select Outstation Tour Route</span>
+            <select id="tourSelect">
+                <option value="none">-- Optional Holiday Tour Packages --</option>
+                <option value="ooty">Coimbatore to Ooty Outstation Taxi</option>
+                <option value="munnar">Coimbatore to Munnar Holiday Tour</option>
+                <option value="kodai">Coimbatore to Kodaikanal Sightseeing</option>
+                <option value="coonoor">Coimbatore to Coonoor Nature Trip</option>
+            </select>
+        </div>
 
         <span class="form-label">Your Name</span>
         <input type="text" id="custName" placeholder="Enter name">
         
-        <span class="form-label">Select Vehicle</span>
+        <span class="form-label">Select Vehicle Fleet Class</span>
         <select id="carSelect">
-            <option value="15">Sedan (Petrol/CNG)</option>
-            <option value="16">Sedan (Diesel)</option>
+            <option value="sedan">Sedan (Dzire/Etios)</option>
+            <option value="suv">SUV (Ertiga/Rumion)</option>
+            <option value="innova">Innova Crysta Premium</option>
+            <option value="urbania">Urbania Luxury (13 Seater)</option>
         </select>
         
-        <button class="btn btn-gold" onclick="calculateFare()"><i class="fas fa-calculator"></i> CHECK FARE</button>
+        <button class="btn btn-gold" onclick="calculateFare()"><i class="fas fa-calculator"></i> CHECK LOGISTICS FARE</button>
         
-        <div id="fareResult" style="margin-top:15px; display:none; font-size: 1.05rem; font-weight: bold; color: #111827; background: #fffbeb; padding: 15px; border-radius: 8px; border: 2px dashed var(--primary-yellow);"></div>
+        <div class="keyword-helper-text">Directly calibrated for Coimbatore Airport terminal pickups, Gandhipuram hubs, and local rides.</div>
         
-        <button id="confirmBookingBtn" class="btn" style="display:none; background:var(--primary-green); color:white; margin-top:10px;" onclick="confirmBooking()"><i class="fab fa-whatsapp"></i> SEND BOOKING VIA WHATSAPP</button>
+        <div id="fareResult" style="margin-top:15px; display:none; font-size: 1.05rem; font-weight: 800; color: var(--text-main); background: #fefce8; padding: 15px; border-radius: 8px; border: 2px dashed #fde047;"></div>
+        
+        <a id="confirmBookingBtn" href="https://wa.me/916369879966" target="_blank" class="btn" style="display:none; margin-top:10px; background:var(--primary-green); color:white;"><i class="fab fa-whatsapp"></i> SECURE FARE VIA WHATSAPP</a>
+    </div>
+</section>
+
+<section class="container" id="routes-section">
+    <h3 class="section-title">Popular Intercity Drop Cabs</h3>
+    <div class="popular-routes-grid">
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Chennai One Way Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Bangalore One Way Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Madurai One Way Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Ooty Outstation Cab <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Salem Intercity Drop <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Trichy Outstation Taxi <span>Call to Book ›</span></a>
     </div>
 </section>
 
 <section id="features-list" class="container">
     <h3 class="section-title">Premium Travel Standards</h3>
     <div class="grid-container">
-        <div class="feature-card"><i class="fas fa-wallet text-gold"></i><div><b>Honest Fares</b><br><small style="color:var(--text-grey);">No surge pricing traps</small></div></div>
-        <div class="feature-card"><i class="fas fa-user-shield text-gold"></i><div><b>Safe Chauffeurs</b><br><small style="color:var(--text-grey);">Background-verified</small></div></div>
-        <div class="feature-card"><i class="fas fa-history text-gold"></i><div><b>On-Time Promise</b><br><small style="color:var(--text-grey);">Guaranteed dispatching</small></div></div>
-        <div class="feature-card"><i class="fas fa-headset text-gold"></i><div><b>24/7 Desk</b><br><small style="color:var(--text-grey);">Always live tracking</small></div></div>
+        <div class="feature-card"><i class="fas fa-wallet text-gold" style="font-size:1.5rem;"></i><div><b style="color:var(--text-main);">Honest Fares</b><br><small style="color:var(--text-muted);font-weight:600;">No surge pricing</small></div></div>
+        <div class="feature-card"><i class="fas fa-user-shield text-gold" style="font-size:1.5rem;"></i><div><b style="color:var(--text-main);">Safe Drivers</b><br><small style="color:var(--text-muted);font-weight:600;">Background-verified</small></div></div>
+        <div class="feature-card"><i class="fas fa-history text-gold" style="font-size:1.5rem;"></i><div><b style="color:var(--text-main);">On-Time</b><br><small style="color:var(--text-muted);font-weight:600;">Guaranteed dispatch</small></div></div>
+        <div class="feature-card"><i class="fas fa-headset text-gold" style="font-size:1.5rem;"></i><div><b style="color:var(--text-main);">24/7 Desk</b><br><small style="color:var(--text-muted);font-weight:600;">Always live tracking</small></div></div>
     </div>
 </section>
 
 <section id="fleet" class="container">
     <h3 class="section-title">Our Maintained Fleet</h3>
     <div class="fleet-grid">
-        <div class="fleet-card"><img src="dzire.png" class="fleet-img"><div class="fleet-info"><h4>Maruti Dzire</h4><p>4 Seater Compact Sedan</p></div></div>
-        <div class="fleet-card"><img src="aura.png" class="fleet-img"><div class="fleet-info"><h4>Hyundai Aura</h4><p>4 Seater Premium Sedan</p></div></div>
-        <div class="fleet-card"><img src="etios.png" class="fleet-img"><div class="fleet-info"><h4>Toyota Etios</h4><p>4 Seater Spacious Sedan</p></div></div>
-        <div class="fleet-card"><img src="innova.png" class="fleet-img"><div class="fleet-info"><h4>Toyota Innova</h4><p>7 Seater Classic Tourer</p></div></div>
-        <div class="fleet-card"><img src="crysta.png" class="fleet-img"><div class="fleet-info"><h4>Innova Crysta</h4><p>7/8 Seater Executive MUV</p></div></div>
-        <div class="fleet-card"><img src="urbania.png" class="fleet-img"><div class="fleet-info"><h4>Force Urbania</h4><p>13 Seater Premium Luxury Van</p></div></div>
+        <div class="fleet-card"><img src="dzire.png" class="fleet-img" alt="Dzire"><div class="fleet-info"><h4>Maruti Dzire</h4><p>4 Seater Compact Sedan</p></div></div>
+        <div class="fleet-card"><img src="aura.png" class="fleet-img" alt="Aura"><div class="fleet-info"><h4>Hyundai Aura</h4><p>4 Seater Premium Sedan</p></div></div>
+        <div class="fleet-card"><img src="etios.png" class="fleet-img" alt="Etios"><div class="fleet-info"><h4>Toyota Etios</h4><p>4 Seater Spacious Sedan</p></div></div>
+        <div class="fleet-card"><img src="innova.png" class="fleet-img" alt="Innova"><div class="fleet-info"><h4>Toyota Innova</h4><p>7 Seater Classic Tourer</p></div></div>
+        <div class="fleet-card"><img src="crysta.png" class="fleet-img" alt="Crysta"><div class="fleet-info"><h4>Innova Crysta</h4><p>7/8 Seater Executive MUV</p></div></div>
+        <div class="fleet-card"><img src="urbania.png" class="fleet-img" alt="Urbania"><div class="fleet-info"><h4>Force Urbania</h4><p>13 Seater Premium Luxury Van</p></div></div>
     </div>
 </section>
 
 <section id="tours" class="container">
     <h3 class="section-title">Top Outstation Tour Packages</h3>
+    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: -10px; margin-bottom: 20px; font-weight:600;">We offer affordable outstation cab packages from Coimbatore to major travel destinations with premium vehicles.</p>
     
     <div class="tour-card">
         <div class="tour-img" style="background-image:url('ooty.png');"><div class="tour-overlay">Ooty Outstation Taxi Tour</div></div>
@@ -226,7 +269,7 @@
             <div class="t-point"><i class="fas fa-check-circle"></i> Doddabetta Peak</div>
             <div class="t-point"><i class="fas fa-check-circle"></i> Rose Garden</div>
         </div>
-        <div style="padding:12px; background:#050914;"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.9rem; padding:12px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT OOTY BOOKING</a></div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT OOTY BOOKING</a></div>
     </div>
     
     <div class="tour-card">
@@ -237,28 +280,52 @@
             <div class="t-point"><i class="fas fa-check-circle"></i> Eravikulam Park</div>
             <div class="t-point"><i class="fas fa-check-circle"></i> Echo Point</div>
         </div>
-        <div style="padding:12px; background:#050914;"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.9rem; padding:12px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT MUNNAR BOOKING</a></div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT MUNNAR BOOKING</a></div>
+    </div>
+
+    <div class="tour-card">
+        <div class="tour-img" style="background-image:url('kodaikanal.png');"><div class="tour-overlay">Kodaikanal Sightseeing Package</div></div>
+        <div class="tour-points">
+            <div class="t-point"><i class="fas fa-check-circle"></i> Kodai Lake</div>
+            <div class="t-point"><i class="fas fa-check-circle"></i> Pillar Rocks</div>
+            <div class="t-point"><i class="fas fa-check-circle"></i> Coaker's Walk</div>
+            <div class="t-point"><i class="fas fa-check-circle"></i> Pine Forest</div>
+        </div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT KODAI BOOKING</a></div>
+    </div>
+
+    <div class="tour-card">
+        <div class="tour-img" style="background-image:url('coonoor.png');"><div class="tour-overlay">Coonoor Scenic Nature Trip</div></div>
+        <div class="tour-points">
+            <div class="t-point"><i class="fas fa-check-circle"></i> Sim's Park</div>
+            <div class="t-point"><i class="fas fa-check-circle"></i> Dolphin's Nose</div>
+            <div class="t-point"><i class="fas fa-check-circle"></i> Lamb's Rock</div>
+            <div class="t-point"><i class="fas fa-check-circle"></i> Catherine Falls</div>
+        </div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT COONOOR BOOKING</a></div>
     </div>
 </section>
 
-<footer id="contact" class="container text-center" style="padding: 40px 15px 60px 15px; border-top: 1px solid var(--border-color); background: #050914; margin-top: 20px;">
-    <div class="brand-title" style="font-size:1.5rem; color: var(--primary-yellow); margin-bottom: 8px;">Quicktaxi</div>
-    <p style="font-size:0.9rem; color: #ffffff; font-weight: 500; margin-bottom: 15px;">Coimbatore's Reliable Taxi Service</p>
-    <div style="margin-top:20px; font-size:0.85rem; font-weight: 700;">
-        <span onclick="openModal('privacy')" style="color: var(--primary-yellow); cursor:pointer; text-decoration: underline; padding: 5px 10px;">Privacy Policy</span>  
-        <span style="color: #ffffff;">•</span> 
-        <span onclick="openModal('disclaimer')" style="color: var(--primary-yellow); cursor:pointer; text-decoration: underline; padding: 5px 10px;">Disclaimer</span>
+<footer id="contact" class="container text-center" style="padding: 40px 15px 60px 15px; border-top: 1px solid var(--border-color); background: var(--bg-card); margin-top: 20px;">
+    <div class="brand-title" style="font-size:1.8rem; color: var(--text-main); margin-bottom: 8px;">Quicktaxi</div>
+    <!-- CORRECTED GENERIC ADDRESS -->
+    <p style="font-size:0.95rem; color: var(--text-muted); font-weight: 600; margin-bottom: 15px;">Quicktaxi Service, Coimbatore</p>
+    <div style="margin-top:20px; font-size:0.9rem; font-weight: 700;">
+        <span onclick="openModal('privacy')" style="color: #d97706; cursor:pointer; text-decoration: underline; padding: 5px 10px;">Privacy Policy</span>  
+        <span style="color: var(--text-muted);">•</span> 
+        <span onclick="openModal('disclaimer')" style="color: #d97706; cursor:pointer; text-decoration: underline; padding: 5px 10px;">Disclaimer</span>
     </div>
 </footer>
 
 <div class="sticky-footer">
-    <a href="https://wa.me/916369879966" class="sticky-btn" style="background:transparent; border: 1px solid rgba(255,255,255,0.2); color:#fff; flex:0.4;"><i class="fab fa-whatsapp"></i> CHAT</a>
+    <a href="https://wa.me/916369879966" class="sticky-btn" style="background:#f1f5f9; border: 1px solid var(--border-color); color:var(--text-main); flex:0.4;"><i class="fab fa-whatsapp" style="color:#166534; font-size:1.2rem;"></i> CHAT</a>
     <a href="tel:+916369879966" class="sticky-btn sticky-pulse" style="background:var(--primary-yellow); color:#000; flex:0.6;"><i class="fas fa-phone-alt"></i> TAP TO CALL NOW</a>
 </div>
 
-<div id="modalPrivacy" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('privacy')">&times;</span>	<h3>Privacy Policy</h3><p>We process coordinate data strictly to coordinate immediate fleet dispatches.</p></div></div>
-<div id="modalDisclaimer" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('disclaimer')">&times;</span><h3>Tariff Disclaimer</h3><p>Fares are calculated based on manual estimates. Final fares depend on accurate odometer readings.</p></div></div>
-<div id="modalAbout" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('about')">&times;</span><h3>About Quicktaxi</h3><p>Operating locally in Coimbatore, we specialize in point-to-point urban transit and intercity outstation services with transparent per-kilometer configurations.</p></div></div>
+<div id="modalPrivacy" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('privacy')">&times;</span>	<h3>Privacy Policy</h3><p>We process data strictly to coordinate immediate fleet dispatches. Your privacy is fully handled using secure architecture properties.</p></div></div>
+<div id="modalDisclaimer" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('disclaimer')">&times;</span><h3>Tariff Disclaimer</h3><p>Fares are processed through manual distance parameters. Tollways, state border regulatory permits, and commercial parking variables are added onto completed receipts metrics actuals.</p></div></div>
+<!-- CORRECTED ABOUT SECTION (Removed Get Taxi / RS Puram) -->
+<div id="modalAbout" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('about')">&times;</span><h3>About Quicktaxi</h3><p>Operating in Coimbatore, Quicktaxi is your premier point-to-point urban transit and intercity outstation service provider. Our fleet specializes in transparent per-kilometer configurations and zero-surge guarantees.</p></div></div>
 
 <script>
 let currentMode = 'city';
@@ -268,63 +335,98 @@ function toggleMenu() {
     document.getElementById('drawerOverlay').classList.toggle('show');
 }
 
-// Sitelink Detection
-window.onload = function() {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('ads') === 'airport') { setCalcMode('airport'); }
-    else if (params.get('ads') === 'local') { setCalcMode('city'); }
-};
-
 function setCalcMode(mode) {
     currentMode = mode;
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById('btn-' + (mode==='oneway'?'oneway':mode==='airport'?'air':'city')).classList.add('active');
-    document.getElementById('oneway-options').style.display = (mode === 'oneway') ? 'flex' : 'none';
+    
+    const showExtra = (mode === 'oneway') ? 'flex' : 'none';
+    const showTour = (mode === 'oneway') ? 'block' : 'none';
+    
+    document.getElementById('oneway-options').style.display = showExtra;
+    document.getElementById('tour-dropdown-container').style.display = showTour;
+    
+    const carSelect = document.getElementById('carSelect');
+    if (mode === 'city') {
+        carSelect.options[0].text = "Sedan (Dzire/Etios)";
+        carSelect.options[1].text = "SUV (Ertiga/Rumion)";
+        carSelect.options[2].text = "Innova Crysta Premium";
+        carSelect.options[3].text = "Urbania Luxury (13 Seater)";
+    } else {
+        carSelect.options[0].text = "Sedan (Dzire/Etios) — \u20B914/KM";
+        carSelect.options[1].text = "SUV (Ertiga/Rumion) — \u20B918/KM";
+        carSelect.options[2].text = "Innova Crysta Premium — \u20B920/KM";
+        carSelect.options[3].text = "Urbania Luxury (13 Seater) — \u20B940/KM";
+    }
+
     document.getElementById('fareResult').style.display = 'none';
     document.getElementById('confirmBookingBtn').style.display = 'none';
 }
 
 function calculateFare() {
-    const from = document.getElementById('fromCity').value, to = document.getElementById('toCity').value, kmVal = document.getElementById('manualKm').value;
-    if(!from || !to || !kmVal) return alert("Please enter locations and approximate KM");
+    const from = document.getElementById('fromCity').value;
+    const to = document.getElementById('toCity').value;
+    const kmInput = document.getElementById('manualKm').value;
     
-    let oneWayDist = parseFloat(kmVal);
-    let estimatedPrice = 0;
-    let displayDist = oneWayDist;
-    let ratePerKm = parseFloat(document.getElementById('carSelect').value);
-    let extraNote = "";
-
+    if(!from || !to || !kmInput) return alert("Please enter locations and approximate KM");
+    
+    const oneWayDist = parseFloat(kmInput);
+    const carType = document.getElementById('carSelect').value;
+    let resultHTML = `Total Route Distance: ${oneWayDist} KM<br>`;
+    
     if (currentMode === 'city') {
-        estimatedPrice = 75 + (oneWayDist * 25);
-        if (oneWayDist > 30) extraNote = '<br><small style="font-weight:600; color:#e11d48; font-size:11px;">* Out of city charges apply</small>';
+        let base = 80;
+        let rate = 28;
+        
+        if (carType === 'suv') {
+            base = 100;
+            rate = 40;
+        } else if (carType === 'innova') {
+            base = 150;
+            rate = 48;
+        } else if (carType === 'urbania') {
+            base = 250;
+            rate = 60;
+        }
+        
+        let exactFare = base + (oneWayDist * rate);
+        let lowerBound = exactFare - 30;
+        if (lowerBound < base) lowerBound = base;
+        
+        resultHTML += `Estimated Fare: \u20B9${lowerBound} ~ \u20B9${exactFare}<br><small style="font-weight:700; color:#475569; font-size:11px; display:block; margin-top:5px;">Approximate local city ride calculation window.</small>`;
     } else if (currentMode === 'airport') {
-        estimatedPrice = 120 + (oneWayDist * 25);
-        if (oneWayDist > 30) extraNote = '<br><small style="font-weight:600; color:#e11d48; font-size:11px;">* Out of city charges apply</small>';
+        let exactFare = 120 + (oneWayDist * 24);
+        resultHTML += `Estimated Fare: \u20B9${exactFare}<br><small style="font-weight:700; color:#475569; font-size:11px; display:block; margin-top:5px;">Standard airport terminal tollways extra metric parameters.</small>`;
     } else if (currentMode === 'oneway') {
+        let ratePerKm = carType === 'suv' ? 18 : carType === 'innova' ? 20 : carType === 'urbania' ? 40 : 14;
         const tripType = document.querySelector('input[name="tripType"]:checked').value;
         if (tripType === 'oneway') {
             let billingDist = oneWayDist < 130 ? 130 : oneWayDist;
-            estimatedPrice = (billingDist * ratePerKm) + 500;
+            let estimatedPrice = (billingDist * ratePerKm) + 400;
+            resultHTML += `Estimated Fare: \u20B9${estimatedPrice}<br><small style="font-weight:700; color:#475569; font-size:11px; display:block; margin-top:5px;">One-Way running distance applies 130 KM minimum base logic.</small>`;
         } else {
-            displayDist = oneWayDist * 2;
-            estimatedPrice = (displayDist * 14) + 500;
+            let computedRoundDist = oneWayDist * 2;
+            let billingDist = computedRoundDist < 250 ? 250 : computedRoundDist;
+            let estimatedPrice = (billingDist * (ratePerKm - 1)) + 400;
+            resultHTML += `Estimated Fare: \u20B9${estimatedPrice}<br><small style="font-weight:700; color:#475569; font-size:11px; display:block; margin-top:5px;">Round trips process on a 250 KM daily boundary standard baseline configuration logs.</small>`;
         }
-        extraNote = '<br><small style="font-weight:600; color:#4b5563; font-size:11px; margin-top:3px; display:block;">Tolls, Permits & Parking Extra</small>';
     }
 
     const resDiv = document.getElementById("fareResult");
-    resDiv.innerHTML = `Total Trip Distance: ${displayDist} KM<br>Estimated Fare: ₹${Math.round(estimatedPrice)}${extraNote}`;
+    resDiv.innerHTML = resultHTML;
     resDiv.style.display = "block";
-    document.getElementById('confirmBookingBtn').style.display = 'flex';
+    
+    // Update WhatsApp link dynamic message
+    const waBtn = document.getElementById('confirmBookingBtn');
+    const custName = document.getElementById('custName').value || 'Guest';
+    const waMsg = `*New Booking Request - Quicktaxi*%0AMode: ${currentMode}%0AName: ${custName}%0AFrom: ${from}%0ATo: ${to}%0ADistance: ${oneWayDist} KM%0AVehicle: ${document.getElementById('carSelect').options[document.getElementById('carSelect').selectedIndex].text}`;
+    waBtn.href = `https://wa.me/916369879966?text=${waMsg}`;
+    waBtn.style.display = 'flex';
 }
 
-function confirmBooking() {
-    const name = document.getElementById('custName').value || 'Guest';
-    const fareInfo = document.getElementById('fareResult').innerText.replace(/\n/g, ' ');
-    let msg = `*New Booking - Quicktaxi*\nMode: ${currentMode}\nName: ${name}\nTrip: ${document.getElementById('fromCity').value} to ${document.getElementById('toCity').value}\nKM: ${document.getElementById('manualKm').value}\nVehicle: ${document.getElementById('carSelect').options[document.getElementById('carSelect').selectedIndex].text}\n${fareInfo}`;
-    window.open(`https://wa.me/916369879966?text=${encodeURIComponent(msg)}`, '_blank');
-}
-
+window.onload = function() {
+    setCalcMode('city');
+};
 function openModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='block'; }
 function closeModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='none'; }
 </script>
