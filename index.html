@@ -6,7 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18048951173');
     </script>
     <meta charset="UTF-8">
@@ -28,7 +27,7 @@
             --text-grey: #9BA1A6;
         }
         
-        * { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        * { box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--bg-dark); color: #ffffff; line-height: 1.6; padding-bottom: 70px; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary-blue); }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -116,7 +115,7 @@
         <input type="text" id="fromCity" placeholder="Pickup Location">
         <input type="text" id="toCity" placeholder="Drop Location">
         <input type="number" id="manualKm" placeholder="Approximate Distance (KM)">
-        <div id="oneway-options" style="display:none; margin: 10px 0 20px; display: flex; justify-content: center; gap: 20px;">
+        <div id="oneway-options" style="display:none; margin: 10px 0 20px; justify-content: center; gap: 20px;">
             <label><input type="radio" name="tripType" value="oneway" checked> One Way</label>
             <label><input type="radio" name="tripType" value="round"> Round Trip</label>
         </div>
@@ -175,6 +174,14 @@
 
 <script>
 let currentMode = 'city';
+
+// Smart Sitelink detection on load
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('ads') === 'airport') { setCalcMode('airport'); }
+    else if (params.get('ads') === 'local') { setCalcMode('city'); }
+    else { setCalcMode('city'); } // Default
+};
 
 function setCalcMode(mode) {
     currentMode = mode;
