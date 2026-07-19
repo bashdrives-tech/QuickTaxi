@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Main Global Bridge -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18048951173"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,27 +9,9 @@
       gtag('js', new Date());
       gtag('config', 'AW-18048951173');
     </script>
-    <!-- Event snippet for Click to call (1) conversion page
-    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-18048951173/FiTeCOWZk9McEIXHtJ5D',
-          'value': 1.0,
-          'currency': 'INR',
-          'event_callback': callback
-      });
-      return false;
-    }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quicktaxi Coimbatore | Guaranteed Pickups</title>
+    <title>Quicktaxi Coimbatore | One Way & Outstation Drops</title>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Playfair+Display:wght@700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -52,7 +34,7 @@
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; position: relative; }
         .text-center { text-align: center; }
-        .text-gold { color: #d97706; } /* Darker yellow/gold for text contrast on white */
+        .text-gold { color: #d97706; }
         
         /* Three Dot Navigation UI */
         .header-nav { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; margin-bottom: 5px; }
@@ -75,7 +57,7 @@
         
         .hero { padding: 10px 0 30px; background: var(--bg-card); margin-top: -10px; border-bottom: 1px solid var(--border-color); }
         .brand-title { font-family: 'Fraunces', serif; font-size: 2.8rem; color: var(--text-main); margin-bottom: 2px; font-weight: 800; }
-        .tagline-pill { background: #fef08a; color: #854d0e; display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #fde047; font-weight: 800; letter-spacing: 0.5px; }
+        .tagline-pill { background: #fef08a; color: #854d0e; display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; border: 1px solid #fde047; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
         .live-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #166534; margin-bottom: 15px; background: #dcfce7; padding: 5px 14px; border-radius: 12px; border: 1px solid #bbf7d0; }
         .live-dot { width: 8px; height: 8px; background-color: var(--primary-green); border-radius: 50%; display: inline-block; box-shadow: 0 0 8px rgba(37, 211, 102, 0.6); animation: status-blink 1.5s infinite ease-in-out; }
         
@@ -153,33 +135,33 @@
 <div class="hero"><div class="container">
     
     <div class="header-nav">
-        <div class="tagline-pill">COIMBATORE'S GUARANTEED PICKUP SERVICE</div>
+        <div class="tagline-pill">COIMBATORE'S GUARANTEED OUTSTATION SERVICE</div>
         <button class="three-dot-btn" onclick="toggleMenu()"><i class="fas fa-ellipsis-v"></i></button>
     </div>
     
     <div class="text-center">
         <h1 class="brand-title">Quicktaxi</h1>
         <h2 style="font-size: 1.7rem; color: var(--text-main); line-height: 1.3; font-weight: 800; margin-bottom: 5px;">
-            Your Trusted Ride in <span class="text-gold">Coimbatore</span>
+            Intercity & One-Way Drops <br><span class="text-gold">Made Easy</span>
         </h2>
         <p style="font-size: 0.95rem; color: var(--text-muted); font-weight: 600; margin: 0 0 15px 0;">
             Safe, Reliable, and On-Time. Every Single Time.
         </p>
 
-        <div class="live-status"><span class="live-dot"></span> Cabs Available Near You Now</div>
+        <div class="live-status"><span class="live-dot"></span> Outstation Cabs Available Now</div>
         
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="btn btn-gold sticky-pulse"><i class="fas fa-phone-alt"></i> TAP TO CALL: 6369879966</a>
+        <a href="tel:+916369879966" class="btn btn-gold sticky-pulse"><i class="fas fa-phone-alt"></i> TAP TO CALL: 6369879966</a>
         <a href="https://wa.me/916369879966" class="btn btn-whatsapp-subtle"><i class="fab fa-whatsapp"></i> Inquiry via WhatsApp</a>
         
         <div class="hero-features-list">
-            <div class="hero-icon-tag"><i class="fas fa-bolt"></i> 10-Min Pickup</div>
+            <div class="hero-icon-tag"><i class="fas fa-bolt"></i> Instant Booking</div>
             <div class="hero-icon-tag"><i class="fas fa-hand-holding-dollar"></i> Flat Tariffs</div>
-            <div class="hero-icon-tag"><i class="fas fa-user-shield"></i> Verified Drivers</div>
+            <div class="hero-icon-tag"><i class="fas fa-user-shield"></i> Highway Verified Drivers</div>
         </div>
 
         <div class="stats-row">
             <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">24 HR</span><br><small style="color: var(--text-muted); font-weight: 700;">Booking</small></div>
-            <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">FAST</span><br><small style="color: var(--text-muted); font-weight: 700;">Pickup</small></div>
+            <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">CLEAN</span><br><small style="color: var(--text-muted); font-weight: 700;">Vehicles</small></div>
             <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">LOWEST</span><br><small style="color: var(--text-muted); font-weight: 700;">Fares</small></div>
         </div>
     </div>
@@ -187,8 +169,8 @@
 
 <section id="booking" class="container">
     <div class="tabs-nav">
-        <button id="btn-city" class="tab-btn active" onclick="setCalcMode('city')">City Ride</button>
-        <button id="btn-oneway" class="tab-btn" onclick="setCalcMode('oneway')">One Way Drop</button>
+        <button id="btn-city" class="tab-btn" onclick="setCalcMode('city')">City Ride</button>
+        <button id="btn-oneway" class="tab-btn active" onclick="setCalcMode('oneway')">One Way Drop</button>
         <button id="btn-air" class="tab-btn" onclick="setCalcMode('airport')">Airport Taxi</button>
     </div>
     
@@ -244,12 +226,12 @@
 <section class="container" id="routes-section">
     <h3 class="section-title">Popular Intercity Drop Cabs</h3>
     <div class="popular-routes-grid">
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="route-call-pill">Coimbatore to Chennai One Way Taxi <span>Call to Book ›</span></a>
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="route-call-pill">Coimbatore to Bangalore One Way Taxi <span>Call to Book ›</span></a>
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="route-call-pill">Coimbatore to Madurai One Way Taxi <span>Call to Book ›</span></a>
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="route-call-pill">Coimbatore to Ooty Outstation Cab <span>Call to Book ›</span></a>
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="route-call-pill">Coimbatore to Salem Intercity Drop <span>Call to Book ›</span></a>
-        <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="route-call-pill">Coimbatore to Trichy Outstation Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Chennai One Way Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Bangalore One Way Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Madurai One Way Taxi <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Ooty Outstation Cab <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Salem Intercity Drop <span>Call to Book ›</span></a>
+        <a href="tel:+916369879966" class="route-call-pill">Coimbatore to Trichy Outstation Taxi <span>Call to Book ›</span></a>
     </div>
 </section>
 
@@ -287,7 +269,7 @@
             <div class="t-point"><i class="fas fa-check-circle"></i> Doddabetta Peak</div>
             <div class="t-point"><i class="fas fa-check-circle"></i> Rose Garden</div>
         </div>
-        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT OOTY BOOKING</a></div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT OOTY BOOKING</a></div>
     </div>
     
     <div class="tour-card">
@@ -298,7 +280,7 @@
             <div class="t-point"><i class="fas fa-check-circle"></i> Eravikulam Park</div>
             <div class="t-point"><i class="fas fa-check-circle"></i> Echo Point</div>
         </div>
-        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT MUNNAR BOOKING</a></div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT MUNNAR BOOKING</a></div>
     </div>
 
     <div class="tour-card">
@@ -309,7 +291,7 @@
             <div class="t-point"><i class="fas fa-check-circle"></i> Coaker's Walk</div>
             <div class="t-point"><i class="fas fa-check-circle"></i> Pine Forest</div>
         </div>
-        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT KODAI BOOKING</a></div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT KODAI BOOKING</a></div>
     </div>
 
     <div class="tour-card">
@@ -320,7 +302,7 @@
             <div class="t-point"><i class="fas fa-check-circle"></i> Lamb's Rock</div>
             <div class="t-point"><i class="fas fa-check-circle"></i> Catherine Falls</div>
         </div>
-        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT COONOOR BOOKING</a></div>
+        <div style="padding:15px; background:var(--bg-card);"><a href="tel:+916369879966" class="btn btn-gold" style="font-size:0.95rem; padding:14px; margin-bottom:0;"><i class="fas fa-phone-alt"></i> INSTANT COONOOR BOOKING</a></div>
     </div>
 </section>
 
@@ -336,7 +318,7 @@
 
 <div class="sticky-footer">
     <a href="https://wa.me/916369879966" class="sticky-btn" style="background:#f1f5f9; border: 1px solid var(--border-color); color:var(--text-main); flex:0.4;"><i class="fab fa-whatsapp" style="color:#166534; font-size:1.2rem;"></i> CHAT</a>
-    <a href="tel:+916369879966" onclick="return gtag_report_conversion('tel:+916369879966');" class="sticky-btn sticky-pulse" style="background:var(--primary-yellow); color:#000; flex:0.6;"><i class="fas fa-phone-alt"></i> TAP TO CALL NOW</a>
+    <a href="tel:+916369879966" class="sticky-btn sticky-pulse" style="background:var(--primary-yellow); color:#000; flex:0.6;"><i class="fas fa-phone-alt"></i> TAP TO CALL NOW</a>
 </div>
 
 <div id="modalPrivacy" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('privacy')">&times;</span>	<h3>Privacy Policy</h3><p>We process data strictly to coordinate immediate fleet dispatches. Your privacy is fully handled using secure architecture properties.</p></div></div>
@@ -344,7 +326,7 @@
 <div id="modalAbout" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('about')">&times;</span><h3>About Quicktaxi</h3><p>Operating in Coimbatore, Quicktaxi is your premier point-to-point urban transit and intercity outstation service provider. Our fleet specializes in transparent per-kilometer configurations and zero-surge guarantees.</p></div></div>
 
 <script>
-let currentMode = 'city';
+let currentMode = 'oneway';
 
 function toggleMenu() {
     document.getElementById('navDrawer').classList.toggle('open');
@@ -352,9 +334,16 @@ function toggleMenu() {
 }
 
 function setCalcMode(mode) {
+    const btnCity = document.getElementById('btn-city');
+    const btnOneway = document.getElementById('btn-oneway');
+    const btnAir = document.getElementById('btn-air');
+    
     currentMode = mode;
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById('btn-' + (mode==='oneway'?'oneway':mode==='airport'?'air':'city')).classList.add('active');
+    
+    if (mode === 'oneway' && btnOneway) btnOneway.classList.add('active');
+    else if (mode === 'airport' && btnAir) btnAir.classList.add('active');
+    else if (mode === 'city' && btnCity) btnCity.classList.add('active');
     
     const showExtra = (mode === 'oneway') ? 'flex' : 'none';
     const showTour = (mode === 'oneway') ? 'block' : 'none';
@@ -432,7 +421,6 @@ function calculateFare() {
     resDiv.innerHTML = resultHTML;
     resDiv.style.display = "block";
     
-    // Update WhatsApp link dynamic message
     const waBtn = document.getElementById('confirmBookingBtn');
     const custName = document.getElementById('custName').value || 'Guest';
     const waMsg = `*New Booking Request - Quicktaxi*%0AMode: ${currentMode}%0AName: ${custName}%0AFrom: ${from}%0ATo: ${to}%0ADistance: ${oneWayDist} KM%0AVehicle: ${document.getElementById('carSelect').options[document.getElementById('carSelect').selectedIndex].text}`;
@@ -441,10 +429,36 @@ function calculateFare() {
 }
 
 window.onload = function() {
-    setCalcMode('city');
+    setCalcMode('oneway');
 };
 function openModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='block'; }
 function closeModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='none'; }
+
+// Google Ads Click-to-Call Automated Conversion Engine Injection logic
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = this.href;
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18048951173/bjA_CNm-lNMcEIXHtJ5D',
+                    'value': 1.0,
+                    'currency': 'INR',
+                    'event_callback': function() {
+                        window.location.href = url;
+                    }
+                });
+                // Fallback timeout engine to ensure tracking completes before redirecting
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 500);
+            } else {
+                window.location.href = url;
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>
