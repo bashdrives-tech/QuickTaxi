@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Main Global Bridge -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18048951173"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -135,14 +135,12 @@
 <div class="hero"><div class="container">
     
     <div class="header-nav">
-        <!-- Text Updated for Outstation Context -->
         <div class="tagline-pill">COIMBATORE'S GUARANTEED OUTSTATION SERVICE</div>
         <button class="three-dot-btn" onclick="toggleMenu()"><i class="fas fa-ellipsis-v"></i></button>
     </div>
     
     <div class="text-center">
         <h1 class="brand-title">Quicktaxi</h1>
-        <!-- Text Updated for Outstation Context -->
         <h2 style="font-size: 1.7rem; color: var(--text-main); line-height: 1.3; font-weight: 800; margin-bottom: 5px;">
             Intercity & One-Way Drops <br><span class="text-gold">Made Easy</span>
         </h2>
@@ -150,21 +148,18 @@
             Safe, Reliable, and On-Time. Every Single Time.
         </p>
 
-        <!-- Text Updated for Outstation Context -->
         <div class="live-status"><span class="live-dot"></span> Outstation Cabs Available Now</div>
         
         <a href="tel:+916369879966" class="btn btn-gold sticky-pulse"><i class="fas fa-phone-alt"></i> TAP TO CALL: 6369879966</a>
         <a href="https://wa.me/916369879966" class="btn btn-whatsapp-subtle"><i class="fab fa-whatsapp"></i> Inquiry via WhatsApp</a>
         
         <div class="hero-features-list">
-            <!-- Text Updated for Outstation Context -->
             <div class="hero-icon-tag"><i class="fas fa-bolt"></i> Instant Booking</div>
             <div class="hero-icon-tag"><i class="fas fa-hand-holding-dollar"></i> Flat Tariffs</div>
             <div class="hero-icon-tag"><i class="fas fa-user-shield"></i> Highway Verified Drivers</div>
         </div>
 
         <div class="stats-row">
-            <!-- Text Updated for Outstation Context -->
             <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">24 HR</span><br><small style="color: var(--text-muted); font-weight: 700;">Booking</small></div>
             <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">CLEAN</span><br><small style="color: var(--text-muted); font-weight: 700;">Vehicles</small></div>
             <div class="text-center"><span class="text-main" style="font-size: 1.3rem; font-weight: 800;">LOWEST</span><br><small style="color: var(--text-muted); font-weight: 700;">Fares</small></div>
@@ -331,7 +326,7 @@
 <div id="modalAbout" class="modal"><div class="modal-content"><span class="close-modal" onclick="closeModal('about')">&times;</span><h3>About Quicktaxi</h3><p>Operating in Coimbatore, Quicktaxi is your premier point-to-point urban transit and intercity outstation service provider. Our fleet specializes in transparent per-kilometer configurations and zero-surge guarantees.</p></div></div>
 
 <script>
-let currentMode = 'oneway'; // SETS DEFAULT TAB FOR THIS PAGE
+let currentMode = 'oneway';
 
 function toggleMenu() {
     document.getElementById('navDrawer').classList.toggle('open');
@@ -426,7 +421,6 @@ function calculateFare() {
     resDiv.innerHTML = resultHTML;
     resDiv.style.display = "block";
     
-    // Update WhatsApp link dynamic message
     const waBtn = document.getElementById('confirmBookingBtn');
     const custName = document.getElementById('custName').value || 'Guest';
     const waMsg = `*New Booking Request - Quicktaxi*%0AMode: ${currentMode}%0AName: ${custName}%0AFrom: ${from}%0ATo: ${to}%0ADistance: ${oneWayDist} KM%0AVehicle: ${document.getElementById('carSelect').options[document.getElementById('carSelect').selectedIndex].text}`;
@@ -435,12 +429,12 @@ function calculateFare() {
 }
 
 window.onload = function() {
-    setCalcMode('oneway'); // INITIALIZES THE TAB ON PAGE LOAD
+    setCalcMode('oneway');
 };
 function openModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='block'; }
 function closeModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='none'; }
 
-// Google Ads Click-to-Call Conversion Snippet Injection logic
+// Google Ads Click-to-Call Automated Conversion Engine Injection logic
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
         element.addEventListener('click', function(e) {
@@ -448,12 +442,14 @@ document.addEventListener('DOMContentLoaded', function() {
             var url = this.href;
             if (typeof gtag === 'function') {
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-18048951173/YOUR_CONVERSION_LABEL',
+                    'send_to': 'AW-18048951173/bjA_CNm-lNMcEIXHtJ5D',
+                    'value': 1.0,
+                    'currency': 'INR',
                     'event_callback': function() {
                         window.location.href = url;
                     }
                 });
-                // Fallback timeout in case event processing delay occurs
+                // Fallback timeout engine to ensure tracking completes before redirecting
                 setTimeout(function() {
                     window.location.href = url;
                 }, 500);
