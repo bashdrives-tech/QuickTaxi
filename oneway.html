@@ -339,9 +339,16 @@ function toggleMenu() {
 }
 
 function setCalcMode(mode) {
+    const btnCity = document.getElementById('btn-city');
+    const btnOneway = document.getElementById('btn-oneway');
+    const btnAir = document.getElementById('btn-air');
+    
     currentMode = mode;
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById('btn-' + (mode==='oneway'?'oneway':mode==='airport'?'air':'city')).classList.add('active');
+    
+    if (mode === 'oneway' && btnOneway) btnOneway.classList.add('active');
+    else if (mode === 'airport' && btnAir) btnAir.classList.add('active');
+    else if (mode === 'city' && btnCity) btnCity.classList.add('active');
     
     const showExtra = (mode === 'oneway') ? 'flex' : 'none';
     const showTour = (mode === 'oneway') ? 'block' : 'none';
@@ -432,6 +439,30 @@ window.onload = function() {
 };
 function openModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='block'; }
 function closeModal(t) { document.getElementById(t==='privacy'?'modalPrivacy':t==='about'?'modalAbout':'modalDisclaimer').style.display='none'; }
+
+// Google Ads Click-to-Call Conversion Snippet Injection logic
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(element) {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = this.href;
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18048951173/YOUR_CONVERSION_LABEL',
+                    'event_callback': function() {
+                        window.location.href = url;
+                    }
+                });
+                // Fallback timeout in case event processing delay occurs
+                setTimeout(function() {
+                    window.location.href = url;
+                }, 500);
+            } else {
+                window.location.href = url;
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>
